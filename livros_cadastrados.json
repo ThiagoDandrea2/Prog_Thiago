@@ -54,15 +54,6 @@
         "livro_ISBN": "978-8535930344"
     },
     {
-        "titulo_livro": "A viagem do elefante",
-        "autor_livro": "José Saramago",
-        "paginas_livro": "264",
-        "livro_publi": "2021",
-        "livro_genero": "Drama",
-        "editora_livro": "Companhia das Letras",
-        "livro_ISBN": "978-8535930375"
-    },
-    {
         "titulo_livro": "Use a Cabeça! Python",
         "autor_livro": "Paul Barry",
         "paginas_livro": "616",

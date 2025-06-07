@@ -1,0 +1,56 @@
+[
+    {
+        "member_id": "4567",
+        "name": "Amanda",
+        "department": "Statics",
+        "position": "Manager",
+        "phone": "1532121545",
+        "email": "amanda@empresa.com",
+        "dependents": [
+            {
+                "name": "Thiago",
+                "relationship": "Husband",
+                "age": 35
+            },
+            {
+                "name": "Luisa",
+                "relationship": "Daughter",
+                "age": 3
+            }
+        ]
+    },
+    {
+        "member_id": "1234",
+        "name": "Thiago",
+        "department": "IT",
+        "position": "Tech",
+        "phone": "1245457878",
+        "email": "tdandrea@empresa.com",
+        "dependents": []
+    },
+    {
+        "member_id": "1546",
+        "name": "Ademir",
+        "department": "Finnancial",
+        "position": "Manager",
+        "phone": "1245457898",
+        "email": "ademir@empresa.com",
+        "dependents": [
+            {
+                "name": "Francys",
+                "relationship": "Esposa",
+                "age": 50
+            },
+            {
+                "name": "Thiago",
+                "relationship": "Filho",
+                "age": 18
+            },
+            {
+                "name": "Matheus",
+                "relationship": "Filho",
+                "age": 12
+            }
+        ]
+    }
+]

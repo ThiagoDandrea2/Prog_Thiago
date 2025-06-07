@@ -82,8 +82,6 @@ def validar_isbn(event):
     else:
         book_isbn_entry.config(foreground='black')
 
-# Adicionar bind ao Entry do ISBN
-    
 
 def atualizar_tabela():
     # Limpa a tabela atual
@@ -187,52 +185,52 @@ largura_label = 40
 software_window = tk.Tk()
 software_window.title(emoji.emojize('📚Cadastro de Livro📚'))
 software_window.geometry('1260x675')
-software_window.config(background='grey')
+software_window.config(background='lightgray')
 
 software_window_new = tk.Frame(software_window)
 software_window_new.grid(row=11, column=0, padx=vlr_x,pady=vlr_y)
 
-title_label = ttk.Label(software_window, text=emoji.emojize('📚📚 Cadastro de Livros 1.0 📚📚'), font=fonte, width=largura_titulo, background='grey', foreground='black')
+title_label = ttk.Label(software_window, text=emoji.emojize('📚📚 Cadastro de Livros 1.0 📚📚'), font=fonte, width=largura_titulo, background='lightgray', foreground='black')
 title_label.grid(row=0, rowspan=2, column=0, columnspan=4, padx=10,pady=10)
 
 #Digite o título do Livro
-book_title_label = ttk.Label(software_window,text=emoji.emojize('📔Digite o titulo do livro📔: '), font=fonte, width=largura_label, background='grey', foreground='black')
+book_title_label = ttk.Label(software_window,text=emoji.emojize('📔Digite o titulo do livro📔: '), font=fonte, width=largura_label, background='lightgray', foreground='black')
 book_title_label.grid(row=2, column=0, padx=vlr_x,pady=vlr_y)
 book_title_entry = ttk.Entry(software_window, justify='center')
 book_title_entry.grid(row=2,column=1,padx=vlr_x,pady=vlr_y)
 
 #Digite o nome do autor
-book_autor_label = ttk.Label(software_window, text=emoji.emojize('🧐Digite o nome do autor🧐'), font=fonte,width=largura_label, background='grey', foreground='black')
+book_autor_label = ttk.Label(software_window, text=emoji.emojize('🧐Digite o nome do autor🧐'), font=fonte,width=largura_label, background='lightgray', foreground='black')
 book_autor_label.grid(row=2,column=2,padx=vlr_x,pady=vlr_y)
 book_autor_entry = ttk.Entry(software_window, justify='center')
 book_autor_entry.grid(row=2,column=3, padx=vlr_x,pady=vlr_y)
 
 #Digite o Quantidade de paginas
-book_pages_label = ttk.Label(software_window,text=emoji.emojize('📖Quantidade de paginas do livro📖: '), font=fonte,width=largura_label, background='grey', foreground='black')
+book_pages_label = ttk.Label(software_window,text=emoji.emojize('📖Quantidade de paginas do livro📖: '), font=fonte,width=largura_label, background='lightgray', foreground='black')
 book_pages_label.grid(row=3,column=0,padx=vlr_x,pady=vlr_y)
 book_pages_entry = ttk.Entry(software_window, justify='right')
 book_pages_entry.grid(row=3,column=1,padx=vlr_x,pady=vlr_y)
 
 #Digite o ano da publicação
-book_year_label = ttk.Label(software_window, text=emoji.emojize('📅Digite o ano da publicação📅: '), font=fonte, width=largura_label, background='grey', foreground='black')
+book_year_label = ttk.Label(software_window, text=emoji.emojize('📅Digite o ano da publicação📅: '), font=fonte, width=largura_label, background='lightgray', foreground='black')
 book_year_label.grid(row=3,column=2, padx=vlr_x,pady=vlr_y)
 book_year_entry = ttk.Entry(software_window,justify='right')
 book_year_entry.grid(row=3,column=3,padx=vlr_x,pady=vlr_y)
 
 #Digite o genero
-book_gen_label = ttk.Label(software_window,text=emoji.emojize('🔬Digite o genêro do livro🔬: '), font=fonte, width=largura_label, background='grey', foreground='black')
+book_gen_label = ttk.Label(software_window,text=emoji.emojize('🔬Digite o genêro do livro🔬: '), font=fonte, width=largura_label, background='lightgray', foreground='black')
 book_gen_label.grid(row=4,column=0,padx=vlr_x,pady=vlr_y)
 book_gen_entry = ttk.Entry(software_window, justify='center')
 book_gen_entry.grid(row=4,column=1,padx=vlr_x,pady=vlr_y)
 
 #Digite a editora
-book_edit_label = ttk.Label(software_window, text=emoji.emojize('📰Digite a editora📰: '), font=fonte, width=largura_label, background='grey', foreground='black')
+book_edit_label = ttk.Label(software_window, text=emoji.emojize('📰Digite a editora📰: '), font=fonte, width=largura_label, background='lightgray', foreground='black')
 book_edit_label.grid(row=4,column=2,padx=vlr_x,pady=vlr_y)
 book_edit_entry = ttk.Entry(software_window, justify='center')
 book_edit_entry.grid(row=4,column=3,padx=vlr_x,pady=vlr_y)
 
 #Digite o ISBN
-book_isbn_label = ttk.Label(software_window,text=emoji.emojize('⚠ Digite o ISBN ⚠'), font=fonte,width=largura_label, background='grey', foreground='black')
+book_isbn_label = ttk.Label(software_window,text=emoji.emojize('⚠ Digite o ISBN ⚠'), font=fonte,width=largura_label, background='lightgray', foreground='black')
 book_isbn_label.grid(row=5,column=0, columnspan=1, padx=vlr_x,pady=vlr_y)
 book_isbn_entry = ttk.Entry(software_window, justify='right', width=100)
 book_isbn_entry.grid(row=5,column=2, columnspan=4, padx=vlr_x,pady=vlr_y)
@@ -256,7 +254,7 @@ style.configure('danger.TButton', foreground='black', background="#fc031c")
 search_frame = ttk.Frame(software_window)
 search_frame.grid(row=6, column=0, columnspan=4, pady=10, sticky="ew")
 
-search_label = ttk.Label(search_frame, text=emoji.emojize("🔎 Buscar por (Título/Autor/ISBN):"), font=fonte, background='grey', foreground='black')
+search_label = ttk.Label(search_frame, text=emoji.emojize("🔎 Buscar por (Título/Autor/ISBN):"), font=fonte, background='lightgray', foreground='black')
 search_label.pack(side="left", padx=5)
 
 search_entry = ttk.Entry(search_frame, width=40)
