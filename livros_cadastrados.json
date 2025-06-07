@@ -1,0 +1,74 @@
+[
+    {
+        "titulo_livro": "Introdução à programação com Python",
+        "autor_livro": "Nilo Ney Coutinho Menezes",
+        "paginas_livro": "552",
+        "livro_publi": "2024",
+        "livro_genero": "Técnico",
+        "editora_livro": "Novatec",
+        "livro_ISBN": "978-8575228869"
+    },
+    {
+        "titulo_livro": "Curso Intensivo de Python: uma Introdução Prática e Baseada em Projetos à Programação",
+        "autor_livro": "Eric Matthes",
+        "paginas_livro": "624",
+        "livro_publi": "2023",
+        "livro_genero": "Técnico",
+        "editora_livro": "Novatec",
+        "livro_ISBN": "978-8575228432"
+    },
+    {
+        "titulo_livro": "Começando a Programar em Python Para Leigos",
+        "autor_livro": "John Paul Mueller",
+        "paginas_livro": "391",
+        "livro_publi": "2020",
+        "livro_genero": "Técnico",
+        "editora_livro": "Alta Books",
+        "livro_ISBN": "978-8550815855"
+    },
+    {
+        "titulo_livro": "Pense em Python – 3ª Edição: Pense como um cientista da computação",
+        "autor_livro": "Allen B. Downey",
+        "paginas_livro": "328",
+        "livro_publi": "2024",
+        "livro_genero": "Técnico",
+        "editora_livro": "Novatec",
+        "livro_ISBN": "978-8575229279"
+    },
+    {
+        "titulo_livro": "Aprenda Python 3 do Jeito Certo: uma Introdução Muito Simples ao Incrível Mundo dos Computadores e da Codificação",
+        "autor_livro": "Zed A. Shaw",
+        "paginas_livro": "320",
+        "livro_publi": "2019",
+        "livro_genero": "Técnico",
+        "editora_livro": "Alta Books",
+        "livro_ISBN": "978-8550804736"
+    },
+    {
+        "titulo_livro": "As intermitências da Morte",
+        "autor_livro": "José Saramago",
+        "paginas_livro": "208",
+        "livro_publi": "2020",
+        "livro_genero": "Drama",
+        "editora_livro": "Companhia das Letras",
+        "livro_ISBN": "978-8535930344"
+    },
+    {
+        "titulo_livro": "A viagem do elefante",
+        "autor_livro": "José Saramago",
+        "paginas_livro": "264",
+        "livro_publi": "2021",
+        "livro_genero": "Drama",
+        "editora_livro": "Companhia das Letras",
+        "livro_ISBN": "978-8535930375"
+    },
+    {
+        "titulo_livro": "Use a Cabeça! Python",
+        "autor_livro": "Paul Barry",
+        "paginas_livro": "616",
+        "livro_publi": "2018",
+        "livro_genero": "Técnico",
+        "editora_livro": "Alta Books",
+        "livro_ISBN": "978-8550803401"
+    }
+]
