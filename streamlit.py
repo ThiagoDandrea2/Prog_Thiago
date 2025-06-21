@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import time
+import requests
+import json
 
 st.title("Título Principal")  # Título grande
 st.header("Cabeçalho da Seção")  # Cabeçalho médio
@@ -90,3 +92,15 @@ st.error("Erro!")
 st.warning("Aviso!")
 st.info("Informação")
 st.success("Sucesso!")
+
+# Imagem
+st.image("image.jpg", caption="Legenda")
+
+# Áudio
+st.audio("audio.mp3")
+
+# Vídeo
+st.video("https://youtu.be/MdUdfh4A-fU?si=J-Qlc1LnmOIE758k")
+
+resposta = requests.get("https://viacep.com.br/ws/14800700/json/")
+st.write(resposta.json())
