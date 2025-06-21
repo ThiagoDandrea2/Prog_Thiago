@@ -3,6 +3,8 @@ import emoji
 import json
 import os
 from datetime import datetime
+import pandas as pd
+import plotly.express as px
 
 #Arquivo JSON
 dados_pacientes = 'pacientes.json'
@@ -289,25 +291,89 @@ def excluir_paciente():
         salvar_dados(dados)
         st.success("Paciente excluído com sucesso!")
 
+def calcular_idade(data_nascimento_str):
+    """Calcula idade a partir da string de data de nascimento (DD/MM/AA)"""
+    try:
+        data_nasc = datetime.strptime(data_nascimento_str, '%d/%m/%y')
+        hoje = datetime.now()
+        idade = hoje.year - data_nasc.year - ((hoje.month, hoje.day) < (data_nasc.month, data_nasc.day))
+        return idade
+    except:
+        return None
+
+def gerar_graficos():
+    dados = carregar_dados()
+    if not dados:
+        return None, None
+    
+    # Preparar dados para análise
+    pacientes = []
+    for cpf, info in dados.items():
+        idade = calcular_idade(info['Data de Nascimento'])
+        pacientes.append({
+            'Sexo': info['Sexo'],
+            'Idade': idade
+        })
+    
+    df = pd.DataFrame(pacientes)
+    
+    # Gráfico de distribuição por sexo
+    if not df.empty:
+        # Gráfico de sexo
+        fig_sexo = px.pie(df, names='Sexo', title='Distribuição por Sexo', 
+                         color_discrete_sequence=px.colors.qualitative.Pastel)
+        
+        # Gráfico de faixa etária
+        bins = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 150]
+        labels = ['0-10', '11-20', '21-30', '31-40', '41-50', '51-60', '61-70', '71-80', '81-90', '91-100', '100+']
+        df['Faixa Etária'] = pd.cut(df['Idade'], bins=bins, labels=labels, right=False)
+        
+        fig_idade = px.bar(df['Faixa Etária'].value_counts().sort_index(), 
+                          title='Distribuição por Faixa Etária',
+                          labels={'value': 'Quantidade', 'index': 'Faixa Etária'},
+                          color_discrete_sequence=['#636EFA'])
+        
+        return fig_sexo, fig_idade
+    return None, None
+
+def contar_pacientes():
+    dados = carregar_dados()
+    return len(dados)
+
 st.title(emoji.emojize('💊 Software de Cadastro pacientes'))
 
+# No seu código, substitua a seção do sidebar por:
+
+# Adicione esta nova opção no menu
 st.sidebar.title('Menu')
 opcao = st.sidebar.radio(
-    'Selecionar uma opçao:',
-    ('Cadastro paciente', 'Lista paciente', 'Editar paciente','Excluir paciente')
+    'Selecionar uma opção:',
+    ('Cadastro paciente', 'Lista paciente', 'Editar paciente', 'Excluir paciente', 'Estatísticas')
 )
 
-# Na navegação entre páginas
+# Navegação entre páginas
 if opcao == 'Cadastro paciente':
     cadastrar_paciente()
 elif opcao == 'Lista paciente':
     listar_pacientes()
-elif opcao == 'Editar paciente':  # Corrigido aqui
+elif opcao == 'Editar paciente':
     editar_paciente()
 elif opcao == 'Excluir paciente':
     excluir_paciente()
+elif opcao == 'Estatísticas':
+    st.header("Estatísticas dos Pacientes")
+    fig_sexo, fig_idade = gerar_graficos()
+    
+    if fig_sexo and fig_idade:
+        col1, col2 = st.columns(2)
+        with col1:
+            st.plotly_chart(fig_sexo, use_container_width=True)
+        with col2:
+            st.plotly_chart(fig_idade, use_container_width=True)
+    else:
+        st.warning("Nenhum dado disponível para exibir estatísticas")
 
-#Rodapé
-st.sidebar.markdown('-')
+# Rodapé (mantenha no sidebar)
+st.sidebar.markdown('---')
 st.sidebar.markdown('Desenvolvido por Thiago')
-st.sidebar.markdown('Total de pacientes: ')
+st.sidebar.markdown(f'Total de pacientes: {contar_pacientes()}')
